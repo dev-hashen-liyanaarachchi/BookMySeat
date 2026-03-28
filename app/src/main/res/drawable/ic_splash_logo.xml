@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="200dp"
+    android:height="200dp"
+    android:viewportWidth="24"
+    android:viewportHeight="24">
+
+    <!-- Cinema Film Strip Background -->
+    <path
+        android:fillColor="#FFC107"
+        android:pathData="M4,2h16v20H4zM6,4v16h12V4H6zM8,6h8v2H8V6zM8,10h8v2H8V10zM8,14h8v2H8V14zM8,18h8v2H8V18z" />
+
+    <!-- Ticket Shape -->
+    <path
+        android:fillColor="#000000"
+        android:pathData="M7,8h10v8H7V8zM8,9v6h8V9H8z" />
+
+    <!-- QR Code Pattern -->
+    <path
+        android:fillColor="#FFC107"
+        android:pathData="M10,10h2v2h-2zM12,10h2v2h-2zM14,10h2v2h-2zM10,12h2v2h-2zM12,12h2v2h-2zM14,12h2v2h-2zM10,14h2v2h-2zM12,14h2v2h-2zM14,14h2v2h-2z" />
+
+    <!-- Seat Icon -->
+    <path
+        android:fillColor="#FFC107"
+        android:pathData="M16,5 L8,5 L8,7 L16,7 L16,5z" />
+    <path
+        android:fillColor="#FFC107"
+        android:pathData="M16,17 L8,17 L8,19 L16,19 L16,17z" />
+
+</vector>

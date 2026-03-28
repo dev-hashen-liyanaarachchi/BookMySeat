@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "1012650998112",
+    "project_id": "bookmyseat-bb31e",
+    "storage_bucket": "bookmyseat-bb31e.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1012650998112:android:29b1d128f2385a274c4605",
+        "android_client_info": {
+          "package_name": "com.hash.bookmyseat"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyD44A0fTm2aReXx1OO24bpgFlvOiOvrtiU"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
