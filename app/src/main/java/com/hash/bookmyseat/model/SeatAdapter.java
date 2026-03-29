@@ -39,25 +39,24 @@ public class SeatAdapter extends RecyclerView.Adapter<SeatAdapter.SeatViewHolder
         Seat seat = seats.get(position);
         holder.tvSeatNumber.setText(seat.getSeatNumber());
 
-        // Set background based on seat status
-        // 0 = Available, 1 = Selected, 2 = Booked
+
         switch (seat.getStatus()) {
-            case 0: // Available
+            case 0:
                 holder.itemView.setBackgroundResource(R.drawable.seat_available);
                 holder.tvSeatNumber.setTextColor(0xFF000000);
                 break;
-            case 1: // Selected
+            case 1:
                 holder.itemView.setBackgroundResource(R.drawable.seat_selected);
                 holder.tvSeatNumber.setTextColor(0xFFFFFFFF);
                 break;
-            case 2: // Booked
+            case 2:
                 holder.itemView.setBackgroundResource(R.drawable.seat_booked);
                 holder.tvSeatNumber.setTextColor(0xFFCCCCCC);
                 break;
         }
 
         holder.itemView.setOnClickListener(v -> {
-            // Only allow click if seat is not booked (status != 2)
+
             if (seat.getStatus() != 2) {
                 listener.onSeatClick(seat);
             }

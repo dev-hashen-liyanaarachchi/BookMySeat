@@ -32,7 +32,7 @@ import retrofit2.converter.gson.GsonConverterFactory;
 
 public class SuccessActivity extends AppCompatActivity {
 
-    private String movieTitle, selectedSeats, userId, userEmail, eventId;  // eventId added
+    private String movieTitle, selectedSeats, userId, userEmail, eventId;
     private double totalAmount;
     private static final String TAG = "SuccessActivity";
     private static final String BASE_URL = "http://192.168.8.190:8080/";
@@ -42,7 +42,7 @@ public class SuccessActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_success);
 
-        // Get eventId from intent (from SeatSelectionActivity)
+
         eventId = getIntent().getStringExtra("event_id");
         Log.d(TAG, "Event ID received: " + eventId);
 
@@ -75,7 +75,7 @@ public class SuccessActivity extends AppCompatActivity {
         String bookingId = "BMS-" + System.currentTimeMillis();
         generateQRCode(bookingId, imgQRCode);
 
-        // Send data to backend with eventId
+
         sendBookingToBackend(bookingId, movieTitle, userEmail, selectedSeats, totalAmount, eventId);
 
         btnHome.setOnClickListener(v -> {

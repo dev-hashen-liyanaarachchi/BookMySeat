@@ -54,7 +54,7 @@ public class MyFirebaseMessagingService extends FirebaseMessagingService {
     public void onNewToken(@NonNull String token) {
         Log.d(TAG, "New FCM Token: " + token);
 
-        // Save token to Firestore immediately
+
         saveTokenToFirestore(token);
     }
 
@@ -95,7 +95,7 @@ public class MyFirebaseMessagingService extends FirebaseMessagingService {
         }
     }
 
-    // Call this method after user login
+
     public static void saveTokenAfterLogin(Context context) {
         String savedToken = context.getSharedPreferences("fcm_prefs", MODE_PRIVATE)
                 .getString("fcm_token", null);

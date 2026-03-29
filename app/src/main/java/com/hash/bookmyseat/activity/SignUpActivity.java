@@ -89,11 +89,11 @@ public class SignUpActivity extends AppCompatActivity {
             return;
         }
 
-        // Disable button and show loading
+
         btnSignUp.setEnabled(false);
         btnSignUp.setText("Sending OTP...");
 
-        // Send OTP to backend
+
         sendOtpToBackend(firstName, lastName, birth, email, password);
     }
 
@@ -125,7 +125,7 @@ public class SignUpActivity extends AppCompatActivity {
                             "OTP sent to " + email,
                             Toast.LENGTH_LONG).show();
 
-                    // Go to OTP Verification Activity
+
                     Intent intent = new Intent(SignUpActivity.this, OtpVerificationActivity.class);
                     intent.putExtra("email", email);
                     intent.putExtra("firstName", firstName);

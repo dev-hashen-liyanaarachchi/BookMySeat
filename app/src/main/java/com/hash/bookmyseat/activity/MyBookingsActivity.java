@@ -73,7 +73,7 @@ public class MyBookingsActivity extends AppCompatActivity {
             return;
         }
 
-        // Removed orderBy to avoid index requirement
+
         db.collection("bookings")
                 .whereEqualTo("userId", userId)
                 .get()

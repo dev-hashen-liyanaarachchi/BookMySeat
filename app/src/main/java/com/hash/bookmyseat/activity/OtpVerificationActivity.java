@@ -39,9 +39,9 @@ public class OtpVerificationActivity extends AppCompatActivity {
     private String email, firstName, lastName, birth, password;
     private FirebaseAuth mAuth;
     private CountDownTimer countDownTimer;
-    private static final long TIMER_DURATION = 60000; // 60 seconds
+    private static final long TIMER_DURATION = 60000;
     private boolean canResend = false;
-    private static final String BASE_URL = "http://192.168.8.190:8080/"; // Change to your IP
+    private static final String BASE_URL = "http://192.168.8.190:8080/";
     private static final String TAG = "OTP_VERIFICATION";
 
     @Override
@@ -52,7 +52,7 @@ public class OtpVerificationActivity extends AppCompatActivity {
 
         mAuth = FirebaseAuth.getInstance();
 
-        // Get data from intent
+
         email = getIntent().getStringExtra("email");
         firstName = getIntent().getStringExtra("firstName");
         lastName = getIntent().getStringExtra("lastName");

@@ -21,7 +21,7 @@ public class BookingHistory {
         this.attended = attended;
     }
 
-    // Getters
+
     public String getBookingId() { return bookingId; }
     public String getMovieTitle() { return movieTitle; }
     public String getSeats() { return seats; }

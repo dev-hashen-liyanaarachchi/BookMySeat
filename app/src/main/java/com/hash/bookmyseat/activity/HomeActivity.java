@@ -84,14 +84,14 @@ public class HomeActivity extends AppCompatActivity {
         MyFirebaseMessagingService.saveTokenAfterLogin(this);
     }
 
-    // ==================== SHAKE TO REFRESH ====================
+
     private void setupShakeToRefresh() {
         shakeDetector = new ShakeDetector(this, () -> {
             runOnUiThread(() -> {
                 shakeCount++;
                 Log.d(TAG, "🎯 SHAKE DETECTED! Count: " + shakeCount);
 
-                // Show snackbar (not toast - to avoid spam)
+
                 Snackbar.make(findViewById(android.R.id.content),
                         "🔄 Refreshing events...",
                         Snackbar.LENGTH_SHORT).show();
@@ -109,7 +109,7 @@ public class HomeActivity extends AppCompatActivity {
         loadEvents();
     }
 
-    // ==================== SEARCH FEATURE ====================
+
     private void setupSearch() {
         searchView = findViewById(R.id.searchView);
         searchView.addTextChangedListener(new TextWatcher() {
@@ -267,7 +267,7 @@ public class HomeActivity extends AppCompatActivity {
                     }
                 });
 
-        // Load Coming Soon Events
+
         db.collection("events")
                 .whereEqualTo("status", "coming_soon")
                 .get()

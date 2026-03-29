@@ -33,7 +33,7 @@ public class MovieDetailsActivity extends AppCompatActivity {
         if (getSupportActionBar() != null) getSupportActionBar().hide();
         setContentView(R.layout.activity_movie_details);
 
-        // Get data from intent
+
         eventId = getIntent().getStringExtra("event_id");
         movieTitle = getIntent().getStringExtra("movie_title");
         eventTitle = getIntent().getStringExtra("event_title");
@@ -46,7 +46,7 @@ public class MovieDetailsActivity extends AppCompatActivity {
         pricePerSeat = getIntent().getDoubleExtra("price_per_seat", 1200);
         posterBase64 = getIntent().getStringExtra("poster_base64");
 
-        // UI Elements
+
         ImageView btnBack = findViewById(R.id.btnBackDetails);
         ImageView ivPoster = findViewById(R.id.ivPoster);
         TextView txtTitle = findViewById(R.id.txtDetailsTitle);
@@ -62,7 +62,7 @@ public class MovieDetailsActivity extends AppCompatActivity {
         MaterialButton btnOpenMap = findViewById(R.id.btnOpenMap);
         MaterialButton btnCall = findViewById(R.id.btnCall);
 
-        // Set data
+
         txtTitle.setText(eventTitle);
         txtMovieTitle.setText(movieTitle);
         txtDescription.setText(description);
@@ -70,7 +70,7 @@ public class MovieDetailsActivity extends AppCompatActivity {
         txtTime.setText("Time: " + time);
         txtVenue.setText("Venue: " + venue);
 
-        // Set location
+
         if (location != null && !location.isEmpty()) {
             txtLocation.setText("📍 " + location);
             txtLocation.setVisibility(android.view.View.VISIBLE);
@@ -80,7 +80,7 @@ public class MovieDetailsActivity extends AppCompatActivity {
             btnOpenMap.setVisibility(android.view.View.GONE);
         }
 
-        // Set contact number
+
         if (contactNumber != null && !contactNumber.isEmpty()) {
             txtContact.setText("📞 " + contactNumber);
             txtContact.setVisibility(android.view.View.VISIBLE);
@@ -92,7 +92,7 @@ public class MovieDetailsActivity extends AppCompatActivity {
 
         txtPrice.setText("Price: LKR " + pricePerSeat + " per seat");
 
-        // Load Base64 image
+
         if (posterBase64 != null && !posterBase64.isEmpty()) {
             try {
                 byte[] decodedString = Base64.decode(posterBase64, Base64.DEFAULT);
@@ -148,13 +148,13 @@ public class MovieDetailsActivity extends AppCompatActivity {
         }
 
         try {
-            // Format phone number
+
             String phoneNumber = contactNumber.trim();
 
-            // Remove all non-digit characters except +
+
             phoneNumber = phoneNumber.replaceAll("[^0-9+]", "");
 
-            // Format for Sri Lanka
+
             if (phoneNumber.startsWith("0")) {
                 phoneNumber = "+94" + phoneNumber.substring(1);
             } else if (phoneNumber.startsWith("7") && phoneNumber.length() == 9) {
@@ -167,22 +167,22 @@ public class MovieDetailsActivity extends AppCompatActivity {
 
             android.util.Log.d("MovieDetails", "Phone number formatted: " + phoneNumber);
 
-            // Create intent with ACTION_DIAL
+
             Intent intent = new Intent(Intent.ACTION_DIAL);
             intent.setData(Uri.parse("tel:" + phoneNumber));
 
-            // Check if there's any app that can handle this intent
+
             if (intent.resolveActivity(getPackageManager()) != null) {
                 startActivity(intent);
             } else {
-                // Fallback: Try with ACTION_CALL (requires permission)
+
                 if (ContextCompat.checkSelfPermission(this, Manifest.permission.CALL_PHONE)
                         == PackageManager.PERMISSION_GRANTED) {
                     Intent callIntent = new Intent(Intent.ACTION_CALL);
                     callIntent.setData(Uri.parse("tel:" + phoneNumber));
                     startActivity(callIntent);
                 } else {
-                    // Request permission
+
                     ActivityCompat.requestPermissions(this,
                             new String[]{Manifest.permission.CALL_PHONE},
                             CALL_PERMISSION_REQUEST);

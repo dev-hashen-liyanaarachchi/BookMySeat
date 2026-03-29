@@ -51,13 +51,13 @@ public class BookingsHistoryAdapter extends RecyclerView.Adapter<BookingsHistory
         int statusColor;
         if (booking.isAttended()) {
             status = "ATTENDED";
-            statusColor = 0xFF4CAF50; // Green
+            statusColor = 0xFF4CAF50;
         } else if (booking.isTicketIssued()) {
             status = "TICKET ISSUED";
-            statusColor = 0xFFFF9800; // Orange
+            statusColor = 0xFFFF9800;
         } else {
             status = "PENDING";
-            statusColor = 0xFFF44336; // Red
+            statusColor = 0xFFF44336;
         }
 
         holder.tvStatus.setText(status);

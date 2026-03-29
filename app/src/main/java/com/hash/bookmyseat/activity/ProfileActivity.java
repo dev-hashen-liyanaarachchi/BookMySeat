@@ -53,7 +53,7 @@ public class ProfileActivity extends AppCompatActivity {
             String email = user.getEmail();
             tvUserEmail.setText(email);
 
-            // Get user details from Firestore
+
             String userId = user.getUid();
             db.collection("users").document(userId).get()
                     .addOnCompleteListener(task -> {
@@ -68,7 +68,7 @@ public class ProfileActivity extends AppCompatActivity {
                                     tvUserName.setText(email != null ? email.split("@")[0] : "User");
                                 }
 
-                                // Get user since date
+
                                 Object createdAt = document.get("createdAt");
                                 if (createdAt != null) {
                                     tvUserSince.setText("Member since: " + createdAt.toString().substring(0, 10));

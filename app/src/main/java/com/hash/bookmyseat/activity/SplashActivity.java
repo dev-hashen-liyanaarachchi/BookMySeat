@@ -25,7 +25,7 @@ public class SplashActivity extends AppCompatActivity {
 
     private static final int NOTIFICATION_PERMISSION_REQUEST = 101;
     private FirebaseAuth mAuth;
-    private static final int SPLASH_DURATION = 2500; // 2.5 seconds
+    private static final int SPLASH_DURATION = 2500;
     private ViewFlipper viewFlipper;
     private int[] images = {R.drawable.ic_splash_logo, R.drawable.ic_splash_logo, R.drawable.ic_splash_logo};
 
@@ -36,7 +36,7 @@ public class SplashActivity extends AppCompatActivity {
 
         mAuth = FirebaseAuth.getInstance();
 
-        // Initialize views
+
         ImageView ivLogo = findViewById(R.id.ivSplashLogo);
         TextView txtLogo = findViewById(R.id.txtLogo);
         TextView txtTitle = findViewById(R.id.txtTitle);
@@ -45,23 +45,23 @@ public class SplashActivity extends AppCompatActivity {
         MaterialButton btnSignUp = findViewById(R.id.btnSignUp);
         View layoutDots = findViewById(R.id.layoutDots);
 
-        // Hide buttons initially
+
         btnSignIn.setVisibility(View.GONE);
         btnSignUp.setVisibility(View.GONE);
         layoutDots.setVisibility(View.GONE);
 
-        // Load animations
+
         Animation fadeIn = AnimationUtils.loadAnimation(this, R.anim.fade_in);
         Animation slideUp = AnimationUtils.loadAnimation(this, R.anim.slide_up);
         Animation scaleAnimation = AnimationUtils.loadAnimation(this, R.anim.scale);
 
-        // Apply animations
+
         ivLogo.startAnimation(scaleAnimation);
         txtLogo.startAnimation(fadeIn);
         txtTitle.startAnimation(fadeIn);
         txtSubTitle.startAnimation(fadeIn);
 
-        // Request notification permission for Android 13+
+
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.TIRAMISU) {
             if (ContextCompat.checkSelfPermission(this, Manifest.permission.POST_NOTIFICATIONS)
                     != PackageManager.PERMISSION_GRANTED) {
@@ -71,13 +71,13 @@ public class SplashActivity extends AppCompatActivity {
             }
         }
 
-        // Check login status with delay for animation
+
         new Handler().postDelayed(() -> {
             if (mAuth.getCurrentUser() != null) {
                 startActivity(new Intent(SplashActivity.this, HomeActivity.class));
                 finish();
             } else {
-                // Show buttons with animation
+
                 btnSignIn.setVisibility(View.VISIBLE);
                 btnSignUp.setVisibility(View.VISIBLE);
                 layoutDots.setVisibility(View.VISIBLE);
@@ -102,7 +102,7 @@ public class SplashActivity extends AppCompatActivity {
         super.onRequestPermissionsResult(requestCode, permissions, grantResults);
         if (requestCode == NOTIFICATION_PERMISSION_REQUEST) {
             if (grantResults.length > 0 && grantResults[0] == PackageManager.PERMISSION_GRANTED) {
-                // Permission granted
+
             }
         }
     }

@@ -11,17 +11,17 @@ public class Event {
     private String date;
     private String time;
     private String venue;
-    private String location;          // For Google Maps
-    private String contactNumber;     // Cinema contact number
+    private String location;
+    private String contactNumber;
     private double pricePerSeat;
     private int totalSeats;
     private String createdBy;
     private Date createdAt;
-    private String status; // upcoming, ongoing, completed
+    private String status;
 
     public Event() {}
 
-    // Constructor with all fields
+
     public Event(String eventId, String title, String description, String movieTitle,
                  String posterBase64, String date, String time, String venue,
                  String location, String contactNumber, double pricePerSeat, int totalSeats,
@@ -43,7 +43,7 @@ public class Event {
         this.status = status;
     }
 
-    // Getters and Setters
+
     public String getEventId() { return eventId; }
     public void setEventId(String eventId) { this.eventId = eventId; }
 

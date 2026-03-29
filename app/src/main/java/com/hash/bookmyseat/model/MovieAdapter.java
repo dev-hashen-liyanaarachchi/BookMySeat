@@ -35,12 +35,12 @@ public class MovieAdapter extends RecyclerView.Adapter<MovieAdapter.ViewHolder> 
         holder.title.setText(movie.getTitle());
         holder.genre.setText(movie.getGenre());
 
-        // Card එක click කළ විට සිදුවන දේ
+
         holder.itemView.setOnClickListener(v -> {
             // MovieDetailsActivity එකට මාරු වීම
             Intent intent = new Intent(v.getContext(), MovieDetailsActivity.class);
 
-            // දත්ත Intent එක හරහා යැවීම (Title, Genre)
+
             intent.putExtra("movie_title", movie.getTitle());
             intent.putExtra("movie_genre", movie.getGenre());
 

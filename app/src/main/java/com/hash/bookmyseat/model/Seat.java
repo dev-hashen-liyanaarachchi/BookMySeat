@@ -2,7 +2,7 @@ package com.hash.bookmyseat.model;
 
 public class Seat {
     private String seatNumber;
-    private int status; // 0=Available, 1=Selected, 2=Booked
+    private int status;
 
     public Seat(String seatNumber, int status) {
         this.seatNumber = seatNumber;
