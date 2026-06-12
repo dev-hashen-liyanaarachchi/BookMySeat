@@ -105,3 +105,6 @@ private static final String MERCHANT_ID = "YOUR_PAYHERE_MERCHANT_ID";
 
 ## 🤝 Contributing
 Contributions are welcome! Please fork the repository and submit a pull request with your suggested improvements.
+Feel free to fork this repository, submit Pull Requests, or file issues for bug fixes and feature enhancements. Developed and maintained by[(https://github.com/dev-hashen-liyanaarachchi/)}.
+
+© 2026 BookMySeat. All rights reserved.
